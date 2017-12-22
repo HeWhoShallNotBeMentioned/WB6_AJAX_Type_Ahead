@@ -6,3 +6,10 @@ const cities = [];
 fetch(endpoint)
   .then(blob => blob.json())
   .then(data => cities.push(...data));  // we use the ... to spread the data so that we do not wind up with a nested array.
+
+function findMatches(wordToMatch, cities) {
+  return cities.filter(place => {
+    const regex = new RegExp(wordToMatch, 'gi');
+    return place.city.match(regex) || place.state.match(regex);
+  });
+}
