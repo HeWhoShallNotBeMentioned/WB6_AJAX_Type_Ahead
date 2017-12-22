@@ -15,7 +15,8 @@ function findMatches(wordToMatch, cities) {
 }
 
 function displayMatches() {
-  console.log(this.value);
+  const matchArray = findMatches(this.value, cities);
+  console.log(matchArray);
 }
 
 const searchInput = document.querySelector('.search');
